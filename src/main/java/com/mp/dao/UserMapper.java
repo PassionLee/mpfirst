@@ -17,7 +17,13 @@ import java.util.List;
  */
 public interface UserMapper extends BaseMapper<User> {
 
-//    @Select("select * from user ${ew.customSqlSegment}")
+    /**
+     * 自定义SQL语句需要配置 @Select
+     *
+     * @param wrapper
+     * @return
+     */
+    //    @Select("select * from user ${ew.customSqlSegment}")
     List<User> selectAll(@Param(Constants.WRAPPER) Wrapper<User> wrapper);
 
     IPage<User> selectUserPage(Page<User> page, @Param(Constants.WRAPPER) Wrapper<User> wrapper);
